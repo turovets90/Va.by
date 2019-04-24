@@ -39,6 +39,51 @@ $(document).ready(function(){
     });
 
 
+    if($(".home_product_slider > div").length >4){
+        $('.home_product_slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    }
+
+
+
+    $('.slick_btn_group .slick_prev').click(function(){
+        $('.home_product_slider').slick('slickPrev');
+    });
+
+    $('.slick_btn_group .slick_next').click(function(){
+        $('.home_product_slider').slick('slickNext');
+    });
+
+
+
+
+
+    /*************************/
+
+
         $('.main_menu .arrow').click(function(){
             $(this).toggleClass('rotate');
             $(this).next().slideToggle();
