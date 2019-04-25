@@ -84,6 +84,17 @@ $(document).ready(function(){
     });
 
 
+    if($('.product_img_slider .item').length >1){
+        $('.product_img_slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots:true,
+            //fade:true,
+        });
+    }
+
+
 
 
 
