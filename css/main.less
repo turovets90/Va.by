@@ -492,9 +492,70 @@ strong, b{
 }
 
 
+.header_fixed{
+  header{
+    position: fixed;
+    background: #fff;
+    z-index: 98;
+    width: 100%;
+    top: 0;
+    left: 0;
+    @media (min-width:1200px){
+      .h_row1 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      .logo{
+        img{
+          max-height: 95px;
+        }
+      }
+      .main_menu .nav li a {
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
 header{
   padding-top: 10px;
   position: relative;
+
+  &.fixed{
+    position: fixed;
+    background: #fff;
+    z-index: 98;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 5px;
+    @media (min-width:1200px){
+      .h_row1 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      .logo{
+        img{
+          max-height: 95px;
+        }
+      }
+      .main_menu .nav li a {
+        padding: 5px 10px;
+      }
+
+      .btn_default {
+        height: 40px;
+      }
+      .phone{
+        font-size: 16px;
+      }
+    }
+    .search_toggler{
+      display: none;
+    }
+  }
+
+
   @media (max-width:991px){
     padding-bottom: 10px;
   }
@@ -672,6 +733,8 @@ header{
     > div.overflow{
       overflow: auto;
     }
+
+
     &.open{
       .transform(translateX(0));
       opacity: 1;
@@ -679,6 +742,7 @@ header{
         display: inline-block;
       }
     }
+
   }
 
   .conacts{
@@ -774,7 +838,7 @@ header{
 
 
 .page-noscroll{
-  &:before{
+  &:after{
     .b_a();
     width: 100%;
     height: 100%;
@@ -785,6 +849,7 @@ header{
 
 
 .page-noscroll1{
+  overflow: hidden;
   &:before{
     .b_a();
     width: 100%;
@@ -812,6 +877,7 @@ header{
 
 
 .search_container{
+
   position: absolute;
   top: 0;
   left: 0;
