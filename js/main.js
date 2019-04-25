@@ -78,6 +78,12 @@ $(document).ready(function(){
     });
 
 
+    $('.catalog_title').click(function () {
+        $(this).next().slideToggle();
+        $(this).toggleClass('act');
+    });
+
+
 
 
 
