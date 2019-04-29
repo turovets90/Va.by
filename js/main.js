@@ -112,7 +112,6 @@ $(document).ready(function(){
 
     $(window).resize(function(){
         var header = $('header').outerHeight();
-        console.log(header);
         $(window).scroll(function(){
             if ($(window).scrollTop() > header) {
                 $('header').addClass('fixed');
@@ -126,17 +125,9 @@ $(document).ready(function(){
                 });
             }
         });
-
-
-
     });
     $(window).resize();
-
-
-
-
-    /*************************/
-
+    
 
 });
 

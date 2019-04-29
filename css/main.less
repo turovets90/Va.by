@@ -520,6 +520,7 @@ strong, b{
 header{
   padding-top: 10px;
   position: relative;
+  background: #fff;
 
   &.fixed{
     position: fixed;
@@ -529,6 +530,20 @@ header{
     top: 0;
     left: 0;
     padding-top: 5px;
+    @media (max-width:991px){
+      .center_col{
+        .logo{
+          img{
+            max-height: 60px;
+          }
+        }
+      }
+
+    .h_row1 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
     @media (min-width:1200px){
       .h_row1 {
         margin-top: 0;
@@ -549,10 +564,11 @@ header{
       .phone{
         font-size: 16px;
       }
+      .search_toggler{
+        display: none;
+      }
     }
-    .search_toggler{
-      display: none;
-    }
+
   }
 
 
@@ -838,27 +854,44 @@ header{
 
 
 .page-noscroll{
-  &:after{
-    .b_a();
+  @media (max-width:991px){
+    header{
+      &.fixed{
+        position: relative;
+        z-index: 100;
+      }
+    }
+  }
+  .backdrop{
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 99;
     background: rgba(17, 32, 68, 0.6);
+    top: 0;
   }
 }
 
 
 .page-noscroll1{
   overflow: hidden;
-  &:before{
-    .b_a();
+ header{
+     z-index: 100;
+   @media (min-width:992px){
+     background: none;
+   }
+
+ }
+  .main_menu .nav li+li a {
+    border-left:0;
+  }
+
+  .backdrop1{
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 99;
-    background: rgba(17, 32, 68, 0.6);
-    @media (max-width:991px){
-      top: 140px;
-    }
+    background: rgba(17, 32, 68, 0.6);  top: 0;
   }
 
 
@@ -2162,6 +2195,13 @@ footer{
       &:last-child{
         margin-right: 0;
       }
+      &.active{
+        a{
+          text-decoration: none;
+          background: @green;
+          border:2px solid @green;
+        }
+      }
       a{
         .flex();
         .ai-center();
@@ -2280,13 +2320,22 @@ footer{
         right: 0 !important;
         left: -23px !important;
         margin-top: 10px;
+        &[x-placement="top-start"]{
+          &:before{
+            bottom: -5px;
+          }
+        }
+        &[x-placement="bottom-start"]{
+          &:before{
+            top: -5px;
+          }
+        }
         &:before{
           .b_a();
           width: 10px;
           height: 10px;
           background: #fff;
           .box-shadow(0 0 16px rgba(24, 83, 138, 0.08));
-          top: -5px;
           right: 25px;
           .transform(rotate(45deg));
           z-index: 0;
@@ -2441,7 +2490,7 @@ footer{
       .transition(@transition_default);
       &:hover{
         .box-shadow(0 4px 24px rgba(229, 229, 229, 0.5));
-       // z-index: 3;
+        z-index: 3;
       }
     }
   }
@@ -3184,4 +3233,10 @@ p.bold{
   .close{
       opacity: 1;
   }
+}
+
+
+
+.page-noscroll1{
+
 }
