@@ -1551,6 +1551,10 @@ header{
   .pt_item{
     .flex();
     .ai-center();
+    .transition(@transition_default);
+    &:hover, &:focus{
+      .transform(translateY(-15px));
+    }
     @media (max-width:1200px){
       .wrap();
     }
@@ -1926,8 +1930,16 @@ footer{
         }
       }
       &.phones{
-        font-family: @Montserrat-bold;
-        color: @green;
+        a{
+          font-family: @Montserrat-bold;
+          color: @green;
+          text-decoration: none;
+          &:hover, &:focus{
+            color: @green;
+            text-decoration: none;
+          }
+        }
+
         &:before{
           .b_a();
           background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='11' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0)'%3e%3cpath d='M7.4 8.684v-.1c0-.3-.3-.7-.6-.9l-1-.6c-.3-.2-.7-.1-1 0l-.5.3c-1.4-.7-2.3-2.1-2.4-3.7l.5-.3c.3-.2.5-.6.5-.9v-1.2c0-.3-.2-.7-.5-.9l-.2-.1c-.2-.1-.7-.1-1 0l-.7.5c-.1.1-.3.4-.3.4-.5 1.9-.2 4 .9 5.6 1 1.7 2.7 2.9 4.6 3.3 0 0 .3 0 .5-.1l.8-.4c.2-.2.4-.6.4-.9z' fill='%2378B948'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0'%3e%3cpath fill='%23fff' transform='translate(0 .184)' d='M0 0h7.4v9.9H0z'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
@@ -3239,4 +3251,13 @@ p.bold{
 
 .page-noscroll1{
 
+}
+
+
+.home_category_list.home_product_slider{
++.slick_btn_group{
+  @media (min-width:1910px){
+    bottom: 45px;
+  }
+}
 }
